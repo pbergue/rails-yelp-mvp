@@ -1,12 +1,11 @@
-<h1>All restaurants</h1>
-<%= link_to "Create a new restaurant", new_restaurant_path %>
-<div class="container">
-  <br><br><br>
+<div class="container wrapper">
   <% @restaurants.each do |restaurant| %>
-    <div>
-      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %> -- <%= restaurant.category %></h2>
-      <small><%= restaurant.address %></small>
-      <p>Phone number: <%= restaurant.phone_number %></p>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/120/80" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant) %> <br> <%= restaurant.category %></h5>
+        <p class="card-text"><%= restaurant.address %> <br> Phone number: <%= restaurant.phone_number %></p>
+      </div>
     </div>
   <% end %>
 </div>

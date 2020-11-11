@@ -4,6 +4,7 @@
   <h3><%= @restaurant.phone_number %></h3>
   <img src="https://picsum.photos/700/400" alt="">
   <br>
+  <h3><small><%= @restaurant.reviews.empty? ? "" : "Reviews:" %></small></h3>
   <ul>
     <% @restaurant.reviews.each do |review| %>
       <li><%= review.content %> -- <%= review.rating %>/5</li>
