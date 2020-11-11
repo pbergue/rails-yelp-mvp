@@ -2,7 +2,15 @@
   <h1><%= @restaurant.name %> -- <%= @restaurant.category %></h1>
   <h3><%= @restaurant.address %></h3>
   <h3><%= @restaurant.phone_number %></h3>
-  <img src="https://picsum.photos/800/500" alt="">
+  <img src="https://picsum.photos/700/400" alt="">
   <br>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> -- <%= review.rating %>/5</li>
+    <% end %>
+  </ul>
+  <br>
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+  <br><br>
   <%= link_to "Back to all restaurants", restaurants_path %>
 </div>
